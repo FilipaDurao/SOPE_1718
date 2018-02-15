@@ -4,8 +4,9 @@ int main(int argc, char* argv[]) {
     printf("Hello!\n");
     return 1;
   }
-  int count = argc -1;
+  int count = argc -2;
   int i = 1;
+ 
   printf("Hello");
   while(count != 0){
     printf(" %s", argv[i]);
@@ -14,4 +15,4 @@ int main(int argc, char* argv[]) {
   }
   printf("!\n");
   return 0;
-} 
+}
