@@ -1,18 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <sys/times.h>
 
 int main (int argc, char** argv){
 
+	struct tms ola;
+
 	int n, iter = 1;
-	time_t t, ti, tf;
+	time_t t;
 
 	if(argc != 3){
 		printf("Wrong number of arguments\n");
 		return 1;
 	}
-
-	time(&ti);
 
 	srand((unsigned) time(&t));
 
@@ -23,9 +24,9 @@ int main (int argc, char** argv){
 	} while(n != atoi(argv[2]));
 
 
-	time(&tf);
+	clock_t times(struct tms *ola);
 
-	printf("Tempo de execucao: %d\n", (int)(tf-ti));
+	printf("Real time: %d\nCPU sys time: %d\n", (int)ola.tms_utime, (int)ola.tms_stime);
 
 	return 0;
 }
