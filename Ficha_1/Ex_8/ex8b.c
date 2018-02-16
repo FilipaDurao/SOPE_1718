@@ -5,7 +5,7 @@
 
 int main (int argc, char** argv){
 
-	struct tms ola;
+	struct tms times;
 
 	int n, iter = 1;
 	time_t t;
@@ -24,9 +24,9 @@ int main (int argc, char** argv){
 	} while(n != atoi(argv[2]));
 
 
-	clock_t times(struct tms *ola);
+	clock_t times(struct tms *times);
 
-	printf("Real time: %d\nCPU sys time: %d\n", (int)ola.tms_utime, (int)ola.tms_stime);
+	printf("Real time: %d\nCPU sys time: %d\n", (int)times.tms_utime, (int)times.tms_stime);
 
 	return 0;
 }
