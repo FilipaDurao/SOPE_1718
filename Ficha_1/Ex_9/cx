@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Verify number of arguments
+if(($# != 1))
+then 
+	echo "Usage: cx <file>"
+	exit
+fi
+
+# Remove executable and object files
+rm "$1.o" &> /dev/null
+rm "$1" &> /dev/null
+
+# Compile
+gcc -Wall -o "$1" "$1.c" &> /dev/null
+
+# Verify compilation success
+if(($? != 0))
+then
+	echo "Compilation failed!"
+fi
+
+# Run
+./"$1"
+
+
