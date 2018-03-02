@@ -9,6 +9,7 @@ int main() {
 
     int i = fork();
     
+    // Parent writes
     if(i > 0){    
         printf("Hello");
     }
@@ -16,6 +17,7 @@ int main() {
     else{
         int myParent = getppid();
         
+        // Child waits for parent to write and then writes
         while(myParent == getppid()){
             usleep(10);
         }
