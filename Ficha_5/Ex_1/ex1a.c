@@ -16,8 +16,8 @@ int main(){
     // Processo pai
     if(pid > 0){
     
-        int num1 = 10;
-        int num2 = 22;
+        int num1;
+        int num2;
     
         close(pipefd[0]);
     
